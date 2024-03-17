@@ -23,6 +23,9 @@ while continuar != 0:
         Opção 9 - Maior entre 3 números
         Opção 10 - Triangulo Equilátero, Isóscele ou Escaleno
         Opção 11 - Triangulo Retângulo, Obtusângulo ou Acutângulo
+        Opção 12 - Calcular fatorial
+        Opção 13 - Proximo primo de um numero primo
+        Opção 14 - Calcular nota de 10 alunos
         ''')
 
     opcao = int(input('Digite a opção desejada: '))
@@ -216,17 +219,79 @@ while continuar != 0:
 
             elif (angulo1 or angulo2 or angulo3) < 90:
                 print('Por só possuir angulos agudos (menores que 90 graus), é um triangulo Acutângulo')
+                
+        case 12:
+            numero = int(input("Digite um número para calcular o fatorial: "))
+
+            fatorial = 1
+
+            for i in range(1, numero + 1):
+                fatorial *= i
+
+                print(f'O fatorial de {numero} é {fatorial}')
+
+        # case 13:
+        
+        case 14:
+
+            salaAula = [10]
+
+            i2 = 0
+            i = 0
+            soma = 0
+
+            for salaAula in range(10):
+                i += 1
+
+                print("\nAluno", i)
+
+                while True:
+                    nota1 = float(input('Nota 1: '))
+                    if 0 <= nota1 <= 10:
+                        break
+                    else:
+                        print('Nota inválida. Por favor, insira novamente: ')
+            
+                while True:
+                    nota2 = float(input('Nota 2: '))
+                    if 0 <= nota2 <= 10:
+                        break
+                    else:
+                        print('Nota inválida. Por favor, insira novamente: ')
+
+                while True:
+                    nota3 = float(input('Nota 3: '))
+                    if 0 <= nota3 <= 10:
+                        break
+                    else:
+                        print('Nota inválida. Por favor, insira novamente: ')
+
+            if nota1 < nota2 and nota1 < nota3:
+                media = (nota2 + nota3) / 2
+  
+            elif nota2 < nota1 and nota2 < nota3:
+                media = (nota1 + nota3) / 2
+
+            elif nota3 < nota1 and nota3 < nota2:
+                media = (nota1 + nota2) / 2
+
+            print('\n')
+
+            for soma in range(10):
+                i2 += 1
+            print(f'Aluno {i2}: media {media} \n')
 
         case _:
             print('Opção invalida')
             
-    continuar = int(input('Quer continuar?? [1] SIM [0] NÂO: '))
 
-    if continuar == 0:
+    continuar = (input('Quer continuar?? SIM ou NÃO: '))
+
+    if continuar == "sim" or continuar == "SIM":
+        continue
+    elif continuar == "nao" or continuar == "NAO":
         print('\nPrograma encerrado')
         exit()
-    elif continuar == 1:
-        continue
     else:
         print('\nOpção invalida')
         exit()
